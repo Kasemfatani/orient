@@ -1979,6 +1979,8 @@ body {
 .book-main-page .book-cont .MazarInfo img {
   width: 80%;
   height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .book-main-page .book-cont .MazarInfo h2 {
   color: var(--white-color);
