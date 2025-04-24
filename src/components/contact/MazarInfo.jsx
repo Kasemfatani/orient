@@ -16,7 +16,7 @@ export default function MazarInfo() {
         bounce: 0.2, // Small bounce effect for the animation
       }}
       className={`w-full MazarInfo`}>
-      <Image src={logo} alt="Mazar" className="img-logo" />
+      <Image src={logo} alt="Orient" className="img-logo" />
     </motion.div>
   );
 }

@@ -59,7 +59,7 @@ export default function Who() {
                                     viewport={{ once: true }}
                                     className="r-side">
                                     <div className="img-cont">
-                                        <Image src={data.about.image} width={500} height={500} alt="Mazar" className="img-hero" />
+                                        <Image src={data.about.image} width={500} height={500} alt="Orient" className="img-hero" />
                                     </div>
                                 </motion.div>
                                 <motion.div
@@ -94,7 +94,7 @@ export default function Who() {
                                             {data.partners.map((review, index) => (
                                                 <figure className={cn()} key={index}>
                                                     <div className="part-cont" >
-                                                        <Image src={review} alt="Mazar" width={200} height={200} />
+                                                        <Image src={review} alt="Orient" width={200} height={200} />
                                                     </div>
                                                 </figure>
                                             ))}

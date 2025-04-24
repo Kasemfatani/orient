@@ -48,7 +48,7 @@ export default function BlogsGrid() {
                                 {
                                     data.map((item, index) => (
                                         <div className="news" key={index}>
-                                            <Image src={item.cover} alt="Mazar" width={200} height={200} />
+                                            <Image src={item.cover} alt="Orient" width={200} height={200} />
                                             <div className="news-data">
                                                 <div className="text">
                                                     <h3>{item.title}</h3>
