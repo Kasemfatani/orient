@@ -1,0 +1,171 @@
+.parteners {
+    padding: 10px 0;
+    background-color: $sec;
+
+    .parts-cont {
+        text-align: center;
+
+        margin-bottom: 56px;
+
+        h3 {
+            font-size: 40px;
+            font-weight: 700;
+            color: #21201F;
+            margin-bottom: 48px;
+        }
+
+        .partss {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 78px;
+
+            .part {
+                width: 100px;
+                height: 100px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+
+    .nums {
+        text-align: center;
+
+        h3 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #21201F;
+            margin-bottom: 12px;
+        }
+        h4{
+            font-size: 16px;
+            font-weight: 600;
+            color: #21201F;
+            margin-bottom: 32px;
+        }
+        .numbers-cont {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            justify-content: center;
+            gap: 27px;
+            // flex-wrap: wrap;
+            @media screen and (max-width: 767px) {
+                grid-template-columns: repeat(2, 1fr);
+                
+            }
+            @media screen and (max-width: 500px) {
+                grid-template-columns: repeat(1, 1fr);
+                
+            }
+            .number {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding: 20px;
+                border-radius: 13px;
+                height: 100%;
+                width: 100%;
+                &:hover{
+                    background-color: $main;
+                    h2{
+                        color: $white;
+                    }
+                    p{
+                        color: #444444;
+                        text-align: center;
+                    }
+                    .needed{
+                        color: $white;
+                        span{
+                            color: $white;
+                        }
+                    }
+                }
+                h2 {
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: $white;
+                    margin-bottom: 15px;
+                }
+
+                p {
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: $white;
+                    margin-bottom: 0;
+                    text-align: center;
+                }
+
+                .needed {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    margin-bottom: 0;
+                    font-size: 40px;
+                    font-weight: 600;
+                    color: $hover;
+
+                    span {
+                        font-size: 40px;
+                        font-weight: 600;
+                        color: $hover;
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+            .number:hover {
+                border: 1px solid $main;
+                box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.15);
+            }
+        }
+    }
+}
+.part-cont{
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    padding: 10px ;
+    border-radius: 7px;
+    border : 1px solid $main;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
+.partenerss{
+    padding: 10px 0;
+    // background-color: #eee;
+}
+
+@media (max-width: 600px) {
+    .parteners {
+        .parts-cont {
+            margin-bottom: 60px;
+
+            h3 {
+                font-size: 32px;
+            }
+
+            .partss {
+                gap: 24px;
+                flex-direction: column;
+            }
+        }
+    }
+
+    .parteners .nums .numbers-cont .number {
+        width: 100%;
+    }
+}

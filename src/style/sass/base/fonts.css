@@ -1,0 +1,210 @@
+@font-face {
+  font-family: "Noyh Geometric";
+  src: url("../webfonts/nohy/NoyhGeometric-Medium.woff2") format("woff2"), url("../webfonts/nohy/NoyhGeometric-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noyh Geometric Slim";
+  src: url("../webfonts/nohy/NoyhGeometricSlim-Medium.woff2") format("woff2"), url("../webfonts/nohy/NoyhGeometricSlim-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noyh Geometric Slim";
+  src: url("../webfonts/nohy/NoyhGeometricSlim-Heavy.woff2") format("woff2"), url("../webfonts/nohy/NoyhGeometricSlim-Heavy.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noyh Geometric Slim";
+  src: url("../webfonts/nohy/NoyhGeometricSlim-SemiLight.woff2") format("woff2"), url("../webfonts/nohy/NoyhGeometricSlim-SemiLight.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noyh Geometric";
+  src: url("../webfonts/nohy/NoyhGeometric-SemiLightItalic.woff2") format("woff2"), url("../webfonts/nohy/NoyhGeometric-SemiLightItalic.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noyh Geometric Slim";
+  src: url("../webfonts/nohy/NoyhGeometricSlim-SemLtIta.woff2") format("woff2"), url("../webfonts/nohy/NoyhGeometricSlim-SemLtIta.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noyh Geometric Slim";
+  src: url("../webfonts/nohy/NoyhGeometricSlim-Light.woff2") format("woff2"), url("../webfonts/nohy/NoyhGeometricSlim-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noyh Geometric";
+  src: url("../webfonts/nohy/NoyhGeometric-Black.woff2") format("woff2"), url("../webfonts/nohy/NoyhGeometric-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noyh Geometric";
+  src: url("../webfonts/nohy/NoyhGeometric-SemiLight.woff2") format("woff2"), url("../webfonts/nohy/NoyhGeometric-SemiLight.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noyh Geometric Slim";
+  src: url("../webfonts/nohy/NoyhGeometricSlim-ThinItalic.woff2") format("woff2"), url("../webfonts/nohy/NoyhGeometricSlim-ThinItalic.woff") format("woff");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noyh Geometric";
+  src: url("../webfonts/nohy/NoyhGeometric-Bold.woff2") format("woff2"), url("../webfonts/nohy/NoyhGeometric-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noyh Geometric";
+  src: url("../webfonts/nohy/NoyhGeometric-Regular.woff2") format("woff2"), url("../webfonts/nohy/NoyhGeometric-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noyh Geometric Slim";
+  src: url("../webfonts/nohy/NoyhGeometricSlim-ExtraLight.woff2") format("woff2"), url("../webfonts/nohy/NoyhGeometricSlim-ExtraLight.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noyh Geometric";
+  src: url("../webfonts/nohy/NoyhGeometric-HeavyItalic.woff2") format("woff2"), url("../webfonts/nohy/NoyhGeometric-HeavyItalic.woff") format("woff");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noyh Geometric";
+  src: url("../webfonts/nohy/NoyhGeometric-LightItalic.woff2") format("woff2"), url("../webfonts/nohy/NoyhGeometric-LightItalic.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noyh Geometric Slim";
+  src: url("../webfonts/nohy/NoyhGeometricSlim-BoldItalic.woff2") format("woff2"), url("../webfonts/nohy/NoyhGeometricSlim-BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noyh Geometric Slim";
+  src: url("../webfonts/nohy/NoyhGeometricSlim-Black.woff2") format("woff2"), url("../webfonts/nohy/NoyhGeometricSlim-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noyh Geometric Slim";
+  src: url("../webfonts/nohy/NoyhGeometricSlim-Regular.woff2") format("woff2"), url("../webfonts/nohy/NoyhGeometricSlim-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noyh Geometric";
+  src: url("../webfonts/nohy/NoyhGeometric-ExtLtIta.woff2") format("woff2"), url("../webfonts/nohy/NoyhGeometric-ExtLtIta.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noyh Geometric Slim";
+  src: url("../webfonts/nohy/NoyhGeometricSlim-HeavyItalic.woff2") format("woff2"), url("../webfonts/nohy/NoyhGeometricSlim-HeavyItalic.woff") format("woff");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noyh Geometric Slim";
+  src: url("../webfonts/nohy/NoyhGeometricSlim-LightItalic.woff2") format("woff2"), url("../webfonts/nohy/NoyhGeometricSlim-LightItalic.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noyh Geometric Slim";
+  src: url("../webfonts/nohy/NoyhGeometricSlim-BlackItalic.woff2") format("woff2"), url("../webfonts/nohy/NoyhGeometricSlim-BlackItalic.woff") format("woff");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noyh Geometric";
+  src: url("../webfonts/nohy/NoyhGeometric-Thin.woff2") format("woff2"), url("../webfonts/nohy/NoyhGeometric-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noyh Geometric Slim";
+  src: url("../webfonts/nohy/NoyhGeometricSlim-Thin.woff2") format("woff2"), url("../webfonts/nohy/NoyhGeometricSlim-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noyh Geometric Slim";
+  src: url("../webfonts/nohy/NoyhGeometricSlim-Italic.woff2") format("woff2"), url("../webfonts/nohy/NoyhGeometricSlim-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noyh Geometric Slim";
+  src: url("../webfonts/nohy/NoyhGeometricSlim-MedIta.woff2") format("woff2"), url("../webfonts/nohy/NoyhGeometricSlim-MedIta.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noyh Geometric";
+  src: url("../webfonts/nohy/NoyhGeometric-Light.woff2") format("woff2"), url("../webfonts/nohy/NoyhGeometric-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noyh Geometric";
+  src: url("../webfonts/nohy/NoyhGeometric-MediumItalic.woff2") format("woff2"), url("../webfonts/nohy/NoyhGeometric-MediumItalic.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noyh Geometric";
+  src: url("../webfonts/nohy/NoyhGeometric-Heavy.woff2") format("woff2"), url("../webfonts/nohy/NoyhGeometric-Heavy.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noyh Geometric Slim";
+  src: url("../webfonts/nohy/NoyhGeometricSlim-ExtLtIta.woff2") format("woff2"), url("../webfonts/nohy/NoyhGeometricSlim-ExtLtIta.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}/*# sourceMappingURL=fonts.css.map */

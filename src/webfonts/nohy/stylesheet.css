@@ -1,0 +1,270 @@
+@font-face {
+    font-family: 'Noyh Geometric';
+    src: url('NoyhGeometric-Medium.woff2') format('woff2'),
+        url('NoyhGeometric-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noyh Geometric Slim';
+    src: url('NoyhGeometricSlim-Medium.woff2') format('woff2'),
+        url('NoyhGeometricSlim-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noyh Geometric Slim';
+    src: url('NoyhGeometricSlim-Heavy.woff2') format('woff2'),
+        url('NoyhGeometricSlim-Heavy.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noyh Geometric Slim';
+    src: url('NoyhGeometricSlim-SemiLight.woff2') format('woff2'),
+        url('NoyhGeometricSlim-SemiLight.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noyh Geometric';
+    src: url('NoyhGeometric-SemiLightItalic.woff2') format('woff2'),
+        url('NoyhGeometric-SemiLightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noyh Geometric Slim';
+    src: url('NoyhGeometricSlim-SemLtIta.woff2') format('woff2'),
+        url('NoyhGeometricSlim-SemLtIta.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noyh Geometric Slim';
+    src: url('NoyhGeometricSlim-Light.woff2') format('woff2'),
+        url('NoyhGeometricSlim-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noyh Geometric';
+    src: url('NoyhGeometric-Black.woff2') format('woff2'),
+        url('NoyhGeometric-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noyh Geometric';
+    src: url('NoyhGeometric-SemiLight.woff2') format('woff2'),
+        url('NoyhGeometric-SemiLight.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noyh Geometric Slim';
+    src: url('NoyhGeometricSlim-ThinItalic.woff2') format('woff2'),
+        url('NoyhGeometricSlim-ThinItalic.woff') format('woff');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noyh Geometric';
+    src: url('NoyhGeometric-Bold.woff2') format('woff2'),
+        url('NoyhGeometric-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noyh Geometric';
+    src: url('NoyhGeometric-Regular.woff2') format('woff2'),
+        url('NoyhGeometric-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noyh Geometric Slim';
+    src: url('NoyhGeometricSlim-ExtraLight.woff2') format('woff2'),
+        url('NoyhGeometricSlim-ExtraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noyh Geometric';
+    src: url('NoyhGeometric-HeavyItalic.woff2') format('woff2'),
+        url('NoyhGeometric-HeavyItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noyh Geometric';
+    src: url('NoyhGeometric-LightItalic.woff2') format('woff2'),
+        url('NoyhGeometric-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noyh Geometric Slim';
+    src: url('NoyhGeometricSlim-BoldItalic.woff2') format('woff2'),
+        url('NoyhGeometricSlim-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noyh Geometric Slim';
+    src: url('NoyhGeometricSlim-Black.woff2') format('woff2'),
+        url('NoyhGeometricSlim-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noyh Geometric Slim';
+    src: url('NoyhGeometricSlim-Regular.woff2') format('woff2'),
+        url('NoyhGeometricSlim-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noyh Geometric';
+    src: url('NoyhGeometric-ExtLtIta.woff2') format('woff2'),
+        url('NoyhGeometric-ExtLtIta.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noyh Geometric Slim';
+    src: url('NoyhGeometricSlim-HeavyItalic.woff2') format('woff2'),
+        url('NoyhGeometricSlim-HeavyItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noyh Geometric Slim';
+    src: url('NoyhGeometricSlim-LightItalic.woff2') format('woff2'),
+        url('NoyhGeometricSlim-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noyh Geometric Slim';
+    src: url('NoyhGeometricSlim-BlackItalic.woff2') format('woff2'),
+        url('NoyhGeometricSlim-BlackItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noyh Geometric';
+    src: url('NoyhGeometric-Thin.woff2') format('woff2'),
+        url('NoyhGeometric-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noyh Geometric Slim';
+    src: url('NoyhGeometricSlim-Thin.woff2') format('woff2'),
+        url('NoyhGeometricSlim-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noyh Geometric Slim';
+    src: url('NoyhGeometricSlim-Italic.woff2') format('woff2'),
+        url('NoyhGeometricSlim-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noyh Geometric Slim';
+    src: url('NoyhGeometricSlim-MedIta.woff2') format('woff2'),
+        url('NoyhGeometricSlim-MedIta.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noyh Geometric';
+    src: url('NoyhGeometric-Light.woff2') format('woff2'),
+        url('NoyhGeometric-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noyh Geometric';
+    src: url('NoyhGeometric-MediumItalic.woff2') format('woff2'),
+        url('NoyhGeometric-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noyh Geometric';
+    src: url('NoyhGeometric-Heavy.woff2') format('woff2'),
+        url('NoyhGeometric-Heavy.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noyh Geometric Slim';
+    src: url('NoyhGeometricSlim-ExtLtIta.woff2') format('woff2'),
+        url('NoyhGeometricSlim-ExtLtIta.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+

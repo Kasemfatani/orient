@@ -1,0 +1,28 @@
+// // Abstracts
+@import "sass/abstracts/variables";
+@import "sass/abstracts/mixins";
+@import "../style/sass/base/fonts";
+
+// // Base
+@import "sass/base/base";
+
+// //Components
+
+// //Layout
+@import "sass/components/header";
+@import "sass/components/hero";
+@import "sass/components/about";
+@import "sass/components/parteners";
+@import "sass/components/brief";
+@import "sass/components/news";
+@import "sass/components/discount";
+@import "sass/components/footer";
+@import "sass/components/book";
+@import "sass/components/about-page";
+@import "sass/components/services";
+@import "sass/components/SingleService";
+@import "sass/components/loading";
+@import "sass/components/swiper";
+@import "sass/components/plan";
+
+

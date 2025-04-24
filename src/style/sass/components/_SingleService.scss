@@ -1,0 +1,112 @@
+.SingleService {
+    background-color: #FFF5E8;
+    padding: 56px 0;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 44px;
+    }
+
+    .single-details {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include max-767 {
+            flex-direction: column;
+            gap: 35px;
+        }
+
+        .text {
+           display: flex;
+        //    align-items: center;
+           gap: 24px;
+           .det{
+            width: 100%;
+           }
+
+            @include max-767 {
+                width: 100%;
+                order: 2;
+            }
+
+            h2 {
+                color: #333;
+                font-size: 32px;
+                font-weight: 700;
+                margin-bottom: 15px;
+            }
+
+            p {
+                color: #333;
+                font-size: 16px;
+                font-weight: 500;
+                margin-bottom: 32px;
+            }
+            .counters{
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+                width: 100%;
+                @media screen and (max-width: 767px) {
+                    grid-template-columns: repeat(1, 1fr);
+                    
+                }
+                .counter{
+                    padding: 18px 8px;
+                    border-radius: 12px;
+                    &:hover{
+                        background-color: $main;
+                        box-shadow: 0 0 10px $main;
+                    }
+                    h4{
+                        color: #333;
+                        font-size: 16px;
+                        font-weight: 600;
+                        margin-bottom: 4px;
+                    }
+                    h5{
+                        color: $hover;
+                        font-size: 40px;
+                        font-weight: 600;
+                        margin-bottom: 8px;
+                        span{
+                            color: $hover;
+                        }
+                    }
+                    p{
+                        color: #666666;
+                        font-size: 16px;
+                        font-weight: 500;
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+
+        .img-cont {
+            width: 40%;
+            border-radius: 16px;
+            aspect-ratio: 466/310;
+            overflow: hidden;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            @include max-767 {
+                width: 100%;
+                order: 1;
+            }
+        }
+    }
+    .gallery{
+        h3{
+            color: #333;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 32px;
+        }
+    }
+}
