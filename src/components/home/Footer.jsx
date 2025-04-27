@@ -90,7 +90,7 @@ export default function Footer() { // Defining the main functional component nam
                             </div>
                         </div>
                         <div className="served">
-                            <i className="fa-regular fa-copyright"></i> {lang === 'ar' ? '2025,جميع الحقوق محفوظة لشركة اورينت الوطنية التجارية' : '2025, All rights reserved to Oriental National Trading Co.'}
+                            <i className="fa-regular fa-copyright"></i> {lang === 'en' ? '2025, All rights reserved to Orient Tourism Company' :"2025፣ ሁሉም መብቶች ለኦሬንት ቱሪዝም ኩባንያ የተጠበቁ ናቸው።"}
                         </div>
                     </div>
             }
