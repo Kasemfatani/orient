@@ -59,86 +59,95 @@ export default function SingleService({data}) {
     // ]
 
     return (
-        <div className="SingleService" >
-           
-                    <div className="container m-auto">
-                        <div className="single-details">
-                            <div className="text">
-                                <div className="det">
-                                    <h2>{data?.title}</h2>
-                                    <p>{data?.description}</p>
-                                </div>
-                                <div className="counters">
-                                    {
-                                        data.statistics.map((feature, index) =>
-                                            <div className="counter" key={index}>
-                                                <h4>{feature.title}</h4>
-                                                <h5><NumberTicker value={Number(feature.counter)} /> + </h5>
-                                                <p>{feature.description}</p>
-                                            </div>
-                                        )
-                                    }
-                                </div>
-                            </div>
-
+        <div className="SingleService">
+            <div className="container m-auto px-4 md:px-6 lg:px-0">
+                <div className="single-details">
+                    <div className="text flex flex-col md:flex-row gap-6">
+                        <div className="det w-full">
+                            <h2 className="text-2xl md:text-3xl lg:text-4xl">{data?.title}</h2>
+                            <p className="text-sm md:text-base">{data?.description}</p>
                         </div>
-                        <div className="packages">
-                            <Swiper
-                                modules={[Pagination, Autoplay]}
-                                spaceBetween={20}
-                                slidesPerView={3}
-                                pagination={{ clickable: true }}
-                                autoplay={{ delay: 3000 }}
-                                className='swiperPackages'
-                                breakpoints={{
-                                    0: {
-                                        slidesPerView: 1,
-                                    },
-                                    768: {
-                                        slidesPerView: 2,
-                                    },
-                                    1024: {
-                                        slidesPerView: 3,
-                                    },
-                                }}
-                            >
-                                {data.packages.map((pkg, index) => (
-                                    <SwiperSlide key={index}>
-                                        <Link href="contact?service=Ummrah" className="package-card">
-                                            <h4>{pkg.title}</h4>
-                                            <div className="price-section">
-                                                <p className="new-price" style={{ fontWeight: 'bold', color: '#2e8b57' }}>
-                                                    {pkg.discount_price}
-                                                </p>
-                                                <p className="old-price" style={{ textDecoration: 'line-through', color: '#999' }}>
-                                                    {pkg.original_price}
-                                                </p>
-                                            </div>
-                                            <span className="offer">{pkg.precetage_discount} % Off</span>
-                                            <p className="details">{pkg.description}</p>
-                                        </Link>
-                                    </SwiperSlide>
-                                ))}
-                            </Swiper>
-                        </div>
-                        <div className="gallery">
-                            <h3>Gallery</h3>
-                            <div className="columns-2 gap-4 sm:columns-5">
-                                {
-                                    data.images.map((img, idx) =>
-                                        <BlurFade key={idx} delay={0.25 + idx * 0.05} inView>
-                                            <a href={img} data-fancybox="gallery">
-                                                <figure>
-                                                    <Image src={img} alt="Orient" width={200} height={200} className="mb-4 size-full rounded-lg object-contain" />
-                                                </figure>
-                                            </a>
-                                        </BlurFade>
-                                    )
-                                }
-                            </div>
+                        <div className="counters grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+                            {data.statistics.map((feature, index) => (
+                                <div className="counter" key={index}>
+                                    <h4>{feature.title}</h4>
+                                    <h5><NumberTicker value={Number(feature.counter)} /> + </h5>
+                                    <p>{feature.description}</p>
+                                </div>
+                            ))}
                         </div>
                     </div>
-            
+                </div>
+                
+                <div className="packages mt-8 md:mt-10">
+                    <h3 className="text-xl md:text-2xl font-bold mb-6">Packages</h3>
+                    <Swiper
+                        modules={[Pagination, Autoplay]}
+                        spaceBetween={15}
+                        slidesPerView={1}
+                        pagination={{ clickable: true }}
+                        autoplay={{ delay: 3000 }}
+                        className='swiperPackages'
+                        breakpoints={{
+                            0: {
+                                slidesPerView: 1,
+                                spaceBetween: 10,
+                            },
+                            640: {
+                                slidesPerView: 1.5,
+                                spaceBetween: 15,
+                            },
+                            768: {
+                                slidesPerView: 2,
+                                spaceBetween: 20,
+                            },
+                            1024: {
+                                slidesPerView: 3,
+                                spaceBetween: 20,
+                            },
+                        }}
+                    >
+                        {data.packages.map((pkg, index) => (
+                            <SwiperSlide key={index}>
+                                <Link href="contact?service=Ummrah" className="package-card">
+                                    <h4>{pkg.title}</h4>
+                                    <div className="price-section">
+                                        <p className="new-price" style={{ fontWeight: 'bold', color: '#2e8b57' }}>
+                                            {pkg.discount_price}
+                                        </p>
+                                        <p className="old-price" style={{ textDecoration: 'line-through', color: '#999' }}>
+                                            {pkg.original_price}
+                                        </p>
+                                    </div>
+                                    <span className="offer">{pkg.precetage_discount} % Off</span>
+                                    <p className="details">{pkg.description}</p>
+                                </Link>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                </div>
+                
+                <div className="gallery mt-8 md:mt-10">
+                    <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6">Gallery</h3>
+                    <div className="columns-1 xs:columns-2 sm:columns-3 md:columns-4 lg:columns-5 gap-3 md:gap-4">
+                        {data.images.map((img, idx) => (
+                            <BlurFade key={idx} delay={0.25 + idx * 0.05} inView>
+                                <a href={img} data-fancybox="gallery">
+                                    <figure className="mb-3 md:mb-4">
+                                        <Image 
+                                            src={img} 
+                                            alt="Orient" 
+                                            width={200} 
+                                            height={200} 
+                                            className="w-full rounded-lg object-contain" 
+                                        />
+                                    </figure>
+                                </a>
+                            </BlurFade>
+                        ))}
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }

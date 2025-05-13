@@ -44,42 +44,77 @@
                 font-weight: 500;
                 margin-bottom: 32px;
             }
-            .counters{
+            .counters {
                 display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 24px;
+                grid-template-columns: 1fr;
+                gap: 16px;
                 width: 100%;
-                @media screen and (max-width: 767px) {
-                    grid-template-columns: repeat(1, 1fr);
-                    
+                
+                @include min-576 {
+                    grid-template-columns: repeat(2, 1fr);
                 }
-                .counter{
-                    padding: 18px 8px;
+                
+                @include min-768 {
+                    gap: 24px;
+                }
+                
+                .counter {
+                    padding: 16px 12px;
                     border-radius: 12px;
                     &:hover{
                         background-color: $main;
                         box-shadow: 0 0 10px $main;
                     }
-                    h4{
+
+                    @include min-768 {
+                    padding: 18px 16px;
+                    }
+        
+                    
+                    h4 {
                         color: #333;
-                        font-size: 16px;
+                        font-size: 14px;
                         font-weight: 600;
                         margin-bottom: 4px;
+                        
+                        @include min-768 {
+                            font-size: 16px;
+                        }
                     }
-                    h5{
+                    
+                    h5 {
                         color: $hover;
-                        font-size: 40px;
+                        font-size: 28px;
                         font-weight: 600;
-                        margin-bottom: 8px;
-                        span{
+                        margin-bottom: 6px;
+                        
+                        @include min-768 {
+                            font-size: 36px;
+                            margin-bottom: 8px;
+                        }
+                        
+                        @include min-992 {
+                            font-size: 40px;
+                        }
+                        
+                        span {
                             color: $hover;
                         }
                     }
-                    p{
+                    
+                    p {
                         color: #666666;
-                        font-size: 16px;
+                        font-size: 13px;
                         font-weight: 500;
                         margin-bottom: 0;
+                        
+                        @include min-768 {
+                            font-size: 14px;
+                        }
+                        
+                        @include min-992 {
+                            font-size: 16px;
+                        }
                     }
                 }
             }
