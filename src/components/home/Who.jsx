@@ -73,7 +73,7 @@ export default function Who() {
                                     viewport={{ once: true }}
                                     className="l-side">
                                     <h3 className='sec-title'>{data.about.title}</h3>
-                                    <p className='who-p'>{data.about.description} </p>
+                                    <p className='who-p text-left'>{data.about.description} </p>
                                     {/* تحميل الملف التعريفي */}
                                     <a href={data.about.profile_file} className="btn" target="_blank" rel="noopener noreferrer">
                                         {

@@ -39,7 +39,7 @@ export default function About() {
             });
             console.log(data);
     }, [lang]);  // Run this effect whenever the `language` changes
-    console.log(data);
+    
 
     return (
         <div className="about" >
@@ -91,7 +91,7 @@ export default function About() {
                                             <div className="text">
                                                 <h2>{item.title}</h2>
                                                 <p>{item.description}</p>
-                                                <div className="btn"><span>Read More </span> <i className="fa-solid fa-chevron-right"></i></div>
+                                                <div className="btn"><span>{lang === 'am' ? 'ተጨማሪ ያንብቡ' : 'Read More'} </span> <i className="fa-solid fa-chevron-right"></i></div>
                                             </div>
                                         </Link>
                                     </SwiperSlide>
