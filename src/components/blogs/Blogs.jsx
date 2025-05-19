@@ -16,7 +16,7 @@ export default function Advant() {
                 setLang('en');
             }
         }
-    })
+    }, []) 
     return (
         <div className="blogs-main-page">
             <ServiceTop img={img1} title="Our Blogs" />

@@ -38,7 +38,7 @@ export default function ServiceWrapper() {
                 console.error('Error fetching data:', error);
                 setLoading(false)
             });
-    }, []);  // Run this effect whenever the `language` changes
+    }, [lang]);  // Run this effect whenever the `language` changes
 
     return (
         <div className="servise" >

@@ -41,7 +41,7 @@ export default function Footer() { // Defining the main functional component nam
                 console.error('Error fetching data:', error);
                 setLoading(false)
             });
-    }, []);  // Run this effect whenever the `language` changes
+    }, [lang]);  // Add lang to the dependency array
     return (
         <footer id='footer'> {/* Main footer container with padding and background color */}
 
@@ -60,15 +60,15 @@ export default function Footer() { // Defining the main functional component nam
                                 <Image src={logo} alt="Orient" width={200} height={200} />
                             </div>
                             <div className="links">
-                                <h3>{lang === 'ar' ? 'روابط سريعة' : 'Quick Links'}</h3>
+                                <h3>{lang === 'am' ? 'ፈጣን ማገናኛዎች' : 'Quick Links'}</h3>
                                 <ul>
-                                    <li><Link href="/">{lang === 'ar' ? 'الرئيسية' : 'Home'}</Link></li>
-                                    <li><Link href="/#about">{lang === 'ar' ? 'من نحن' : 'About Us'}</Link></li>
-                                    <li><Link href="/#contact">{lang === 'ar' ? 'اتصل بنا' : 'Contact Us'}</Link></li>
+                                    <li><Link href="/">{lang === 'am' ? 'መነሻ' : 'Home'}</Link></li>
+                                    <li><Link href="/#about">{lang === 'am' ? 'ስለኛ' : 'About Us'}</Link></li>
+                                    <li><Link href="/#contact">{lang === 'am' ? 'ያግኙን' : 'Contact Us'}</Link></li>
                                 </ul>
                             </div>
                             <div className="links">
-                                <h3>{lang === 'ar' ? 'اتصل بنا' : 'Contact Us'}</h3>
+                                <h3>{lang === 'am' ? 'ያግኙን' : 'Contact Us'}</h3>
                                 <ul>
                                     <li ><Link href={`tel:${data?.mobile}`} >{data?.mobile}</Link></li>
                                     <li ><Link href={`mailto:${data?.email}`} >{data?.email}</Link></li>
@@ -76,7 +76,7 @@ export default function Footer() { // Defining the main functional component nam
                                 </ul>
                             </div>
                             <div className="links">
-                                <h3>{lang === 'ar' ? 'تابعنا' : 'Follow Us'}</h3>
+                                <h3>{lang === 'am' ? 'ይከተሉን' : 'Follow Us'}</h3>
                                 <div className="social">
                                     {
                                         data.social_media.map((social, index) => (

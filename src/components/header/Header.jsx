@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import logo from '/public/images/logo.png';
 import global from '/public/global.svg';
 import bars from '/public/images/bars.png';
@@ -10,13 +10,15 @@ export default function Header() {
   const [opened, setOpened] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [showNav, setShowNav] = useState(true);
+  const overlayRef = useRef(null);
 
   function openLinks() {
-    setOpened(!opened);
-    if (opened) {
-      document.querySelector('.herader-overly-content').style.transform = 'translateX(-100%)';
-    } else {
-      document.querySelector('.herader-overly-content').style.transform = 'translateX(0)';
+    const newOpenedState = !opened;
+    setOpened(newOpenedState);
+    
+    // Use the ref to access the DOM element directly
+    if (overlayRef.current) {
+      overlayRef.current.style.transform = newOpenedState ? 'translateX(0)' : 'translateX(-100%)';
     }
   }
 
@@ -45,19 +47,26 @@ export default function Header() {
   }, [lastScrollY]);
 
 
-  let [lang, setLang] = useState('en');
+  const [lang, setLang] = useState('en');
+  
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      if (localStorage.getItem('lang') === 'am' || localStorage.getItem('lang') === 'en') {
-        setLang(localStorage.getItem('lang'));
-        // localStorage.setItem('lang', 'en');
-      }
-      else {
+      const storedLang = localStorage.getItem('lang');
+      if (storedLang === 'am' || storedLang === 'en') {
+        setLang(storedLang);
+      } else {
         localStorage.setItem('lang', 'en');
         setLang('en');
       }
     }
-  }, [lang]);
+  }, []); // Remove lang from dependency array to prevent infinite loop
+
+  const toggleLanguage = () => {
+    const newLang = lang === 'en' ? 'am' : 'en';
+    localStorage.setItem('lang', newLang);
+    setLang(newLang);
+    window.location.reload(); // Reloads the page
+  };
 
   return (
     <div className="head-all">
@@ -76,16 +85,7 @@ export default function Header() {
             </Link>
           </div>
           <div className="r-side">
-            <div className="language" onClick={() => {
-              if (lang === 'en') {
-                localStorage.setItem('lang', 'am');
-                setLang('am');
-              } else {
-                localStorage.setItem('lang', 'en');
-                setLang('en');
-              }
-              window.location.reload(); // Reloads the page
-            }}>
+            <div className="language" onClick={toggleLanguage}>
               <Image src={global} alt="orient" className="img-language" />
             </div>
             <div className="bars" onClick={openLinks}>
@@ -94,13 +94,17 @@ export default function Header() {
           </div>
         </div>
       </div>
-      <div className="herader-overly-content" style={{ transform: 'translateX(-100%)' }} onClick={openLinks}>
+      <div 
+        ref={overlayRef}
+        className="herader-overly-content" 
+        style={{ transform: 'translateX(-100%)' }}
+      >
         <div className="links">
-          <Link href="/" onClick={openLinks}>Home</Link>
-          <Link href="/#about" onClick={openLinks}>About</Link>
-          <Link href="/#services" onClick={openLinks}>Services</Link>
-          <Link href="/#contact" onClick={openLinks}>Contact US</Link>
-          <Link href="/blogs" onClick={openLinks}>Blogs</Link>
+          <Link href="/" onClick={openLinks}>{lang === 'en' ? 'Home' : 'መነሻ'}</Link>
+          <Link href="/#about" onClick={openLinks}>{lang === 'en' ? 'About' : 'ስለኛ'}</Link>
+          <Link href="/#services" onClick={openLinks}>{lang === 'en' ? 'Services' : 'አገልግሎቶች'}</Link>
+          <Link href="/#contact" onClick={openLinks}>{lang === 'en' ? 'Contact US' : 'ያግኙን'}</Link>
+          <Link href="/blogs" onClick={openLinks}>{lang === 'en' ? 'Blogs' : 'ብሎጎች'}</Link>
         </div>
       </div>
     </div>

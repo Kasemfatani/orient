@@ -36,7 +36,7 @@ export default function Who() {
                 console.error('Error fetching data:', error);
                 setLoading(false)
             });
-    }, []);  // Run this effect whenever the `language` changes
+    }, [lang]);  // Run this effect whenever the `language` changes
 
 
     return (
@@ -128,7 +128,7 @@ export default function Who() {
                                                         {/* <NumberTicker value={item.counter} /> + */}
                                                         <NumberTicker value={Number(item.counter) > 1000000 ? Number(item.counter) / 1000000 : Number(item.counter)} /> {Number(item.counter) > 1000000 ? 'Million' : ''} +
                                                     </div>
-                                                    <p>{item.description}</p>
+                                                    <p >{item.description}</p>
                                                 </motion.div>
                                             )
                                         }

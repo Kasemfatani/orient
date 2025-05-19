@@ -6,7 +6,7 @@
 // // Base
 @import "sass/base/base";
 
-// //Components
+
 
 // //Layout
 @import "sass/components/header";
@@ -24,5 +24,5 @@
 @import "sass/components/loading";
 @import "sass/components/swiper";
 @import "sass/components/plan";
-
-
+// //Components
+@import "sass/components/general"; //(have to be at the bottom) Added general component styles

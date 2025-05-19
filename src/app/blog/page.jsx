@@ -43,7 +43,7 @@ export default function Advant() {
                 console.error('Error fetching data:', error);
                 setLoading(false)
             });
-    }, []);  // Run this effect whenever the `language` changes
+    }, [lang]);  // Run this effect whenever the `language` changes
 
     console.log(data);
     return (
@@ -72,7 +72,7 @@ export default function Advant() {
                                         </div>
 
                                     </div>
-                                    <p className="discripton"> {data.description} </p>
+                                    <p className="discripton "> {data.description} </p>
                                     <h3>From our gallery</h3>
                                     <div className="imgs-cont">
                                         {

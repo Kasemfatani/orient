@@ -37,7 +37,8 @@ export default function About() {
                 console.error('Error fetching data:', error);
                 setLoading(false)
             });
-    }, []);  // Run this effect whenever the `language` changes
+            console.log(data);
+    }, [lang]);  // Run this effect whenever the `language` changes
     console.log(data);
 
     return (
