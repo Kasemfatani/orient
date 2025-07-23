@@ -71,12 +71,14 @@ export default function Book() {
 							<div className="vision-img-cont">
 								<div className="vision-img">
 									<figure>
-										<Image
-											src={data?.vision.image}
-											width={200}
-											height={200}
-											alt="vision"
-										/>
+										{data?.vision?.image ? (
+											<Image
+												src={data.vision.image}
+												width={200}
+												height={200}
+												alt="vision"
+											/>
+										) : null}
 									</figure>
 								</div>
 							</div>
@@ -99,12 +101,14 @@ export default function Book() {
 							<div className="vision-img-cont">
 								<div className="vision-img">
 									<figure>
-										<Image
-											src={data?.mission.image}
-											width={200}
-											height={200}
-											alt="mission"
-										/>
+										{data?.mission?.image ? (
+											<Image
+												src={data.mission.image}
+												width={200}
+												height={200}
+												alt="mission"
+											/>
+										) : null}
 									</figure>
 								</div>
 							</div>
@@ -127,12 +131,14 @@ export default function Book() {
 							<div className="vision-img-cont">
 								<div className="vision-img">
 									<figure>
-										<Image
-											src={data?.goals.image}
-											width={200}
-											height={200}
-											alt="goals"
-										/>
+										{data?.goals?.image ? (
+											<Image
+												src={data.goals.image}
+												width={200}
+												height={200}
+												alt="goals"
+											/>
+										) : null}
 									</figure>
 								</div>
 							</div>
