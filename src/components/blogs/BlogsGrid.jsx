@@ -54,7 +54,7 @@ export default function BlogsGrid() {
                                                     <h3>{item.title}</h3>
                                                     <p>{item.description}</p>
                                                 </div>
-                                                <a href="/blog?id=1">
+                                                <a href={`/blog?id=${item.id}`}>
                                                     <div className="arrow">
                                                         <i className="fa-solid fa-chevron-right"></i>
                                                     </div>

@@ -57,7 +57,7 @@ export default function SingleService({ data }) {
 	//         details: '5-star hotel, private transport, full board meals & flight.'
 	//     },
 	// ]
-	console.log(data.packages);
+	// console.log(data.packages);
 	return (
 		<div className="SingleService">
 			<div className="container m-auto px-4 md:px-6 lg:px-0">
@@ -137,7 +137,22 @@ export default function SingleService({ data }) {
 					>
 						{data.packages.map((pkg, index) => (
 							<SwiperSlide key={index}>
-								<Link href="contact?service=Ummrah" className="package-card">
+								<Link
+									href="contact?service=Ummrah"
+									className="package-card !h-[35rem] flex flex-col justify-between"
+								>
+									{/* Add package cover image */}
+									{pkg.cover && (
+										<div className="package-img mb-3 h-60 flex items-center justify-center">
+											<Image
+												src={pkg.cover}
+												alt={pkg.title}
+												width={200}
+												height={120}
+												className="w-full h-60 rounded-lg object-cover"
+											/>
+										</div>
+									)}
 									<h4>{pkg.title}</h4>
 									<div className="price-section">
 										<p
@@ -146,7 +161,9 @@ export default function SingleService({ data }) {
 										>
 											{currency === "usd"
 												? `$${pkg.discount_price}`
-												: `${pkg.discount_price_sar} ﷼`}
+												: pkg.discount_price_sar
+												? `${pkg.discount_price_sar} ﷼`
+												: `$${pkg.discount_price}`}
 										</p>
 										<p
 											className="old-price"
@@ -154,10 +171,18 @@ export default function SingleService({ data }) {
 										>
 											{currency === "usd"
 												? `$${pkg.original_price}`
-												: `${pkg.original_price_sar} ﷼`}
+												: pkg.original_price_sar
+												? `${pkg.original_price_sar} ﷼`
+												: `$${pkg.original_price}`}
 										</p>
 									</div>
-									<span className="offer">{pkg.precetage_discount} % Off</span>
+									<span className="offer">
+										{currency === "usd"
+											? `${pkg.precetage_discount} % Off`
+											: pkg.precetage_discount_sar
+											? `${pkg.precetage_discount_sar} % Off`
+											: `${pkg.precetage_discount} % Off`}
+									</span>
 									<p className="details">{pkg.description}</p>
 								</Link>
 							</SwiperSlide>
@@ -172,13 +197,10 @@ export default function SingleService({ data }) {
 					<div className="columns-1 xs:columns-2 sm:columns-3 md:columns-4 lg:columns-5 gap-3 md:gap-4">
 						{data.images.map((img, idx) => (
 							<BlurFade key={idx} delay={0.25 + idx * 0.05} inView>
-								<a
-									href={`https://app.orient-grp.com${img}`}
-									data-fancybox="gallery"
-								>
+								<a href={img} data-fancybox="gallery">
 									<figure className="mb-3 md:mb-4">
 										<Image
-											src={`https://app.orient-grp.com${img}`}
+											src={img}
 											alt="Orient"
 											width={200}
 											height={200}

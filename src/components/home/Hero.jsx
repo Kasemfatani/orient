@@ -83,13 +83,13 @@ export default function Hero() {
 										</video>
 									)}
 									<div className="overlay">
-										<div className="container m-auto">
+										{/* <div className="container m-auto">
 											{item.type == "image" ? (
 												<div className="heading">
 													<h1>{item.title}</h1>
 												</div>
 											) : null}
-										</div>
+										</div> */}
 									</div>
 								</div>
 							</SwiperSlide>
