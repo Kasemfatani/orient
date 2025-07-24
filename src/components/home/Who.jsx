@@ -92,7 +92,7 @@ export default function Who() {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
-                                    {lang === 'en' ? 'Download our brochure' : 'ዝርዝር አስተዳደር'}
+                                    {lang === 'en' ? 'Download our brochure' : 'ማዉረድ'}
                                 </a>
                             )}
                         </motion.div>
