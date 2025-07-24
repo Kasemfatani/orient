@@ -61,7 +61,6 @@ export default function SingleService({ data }) {
 	return (
 		<div className="SingleService">
 			<div className="container m-auto px-4 md:px-6 lg:px-0">
-								
 				<div className="single-details">
 					<div className="text flex flex-col md:flex-row gap-6">
 						<div className="det w-full">
@@ -173,10 +172,13 @@ export default function SingleService({ data }) {
 					<div className="columns-1 xs:columns-2 sm:columns-3 md:columns-4 lg:columns-5 gap-3 md:gap-4">
 						{data.images.map((img, idx) => (
 							<BlurFade key={idx} delay={0.25 + idx * 0.05} inView>
-								<a href={img} data-fancybox="gallery">
+								<a
+									href={`https://app.orient-grp.com${img}`}
+									data-fancybox="gallery"
+								>
 									<figure className="mb-3 md:mb-4">
 										<Image
-											src={img}
+											src={`https://app.orient-grp.com${img}`}
 											alt="Orient"
 											width={200}
 											height={200}
