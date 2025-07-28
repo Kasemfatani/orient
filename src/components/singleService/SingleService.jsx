@@ -11,7 +11,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import Link from "next/link";
 
-export default function SingleService({ data }) {
+export default function SingleService({ data, lang }) {
 	Fancybox.bind("[data-fancybox]", {
 		// Your custom options
 	});
@@ -71,7 +71,7 @@ export default function SingleService({ data }) {
 						</div>
 						<div className="counters grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
 							{data.statistics.map((feature, index) => (
-								<div className="counter" key={index}>
+								<div className="counter bg-[#EA9623]" key={index}>
 									<h4>{feature.title}</h4>
 									<h5>
 										<NumberTicker value={Number(feature.counter)} /> +{" "}
@@ -105,7 +105,26 @@ export default function SingleService({ data }) {
 								}`}
 								onClick={() => setCurrency("sar")}
 							>
-								Saudi Riyal (﷼)
+								Saudi Riyal (
+								<span
+									style={{
+										verticalAlign: "middle",
+										display: "inline-block",
+										width: "1.2em",
+										height: "1em",
+									}}
+								>
+									<svg
+										viewBox="0 0 1124.14 1256.39"
+										width="1em"
+										height="1em"
+										fill="currentColor"
+									>
+										<path d="M699.62,1113.02h0c-20.06,44.48-33.32,92.75-38.4,143.37l424.51-90.24c20.06-44.47,33.31-92.75,38.4-143.37l-424.51,90.24Z" />
+										<path d="M1085.73,895.8c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.33v-135.2l292.27-62.11c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.27V66.13c-50.67,28.45-95.67,66.32-132.25,110.99v403.35l-132.25,28.11V0c-50.67,28.44-95.67,66.32-132.25,110.99v525.69l-295.91,62.88c-20.06,44.47-33.33,92.75-38.42,143.37l334.33-71.05v170.26l-358.3,76.14c-20.06,44.47-33.32,92.75-38.4,143.37l375.04-79.7c30.53-6.35,56.77-24.4,73.83-49.24l68.78-101.97v-.02c7.14-10.55,11.3-23.27,11.3-36.97v-149.98l132.25-28.11v270.4l424.53-90.28Z" />
+									</svg>
+								</span>
+								)
 							</button>
 						</div>
 					</div>
@@ -138,12 +157,21 @@ export default function SingleService({ data }) {
 						{data.packages.map((pkg, index) => (
 							<SwiperSlide key={index}>
 								<Link
-									href="contact?service=Ummrah"
-									className="package-card !h-[35rem] flex flex-col justify-between"
+									href="contact"
+									className="package-card !h-[34rem] flex flex-col justify-between"
 								>
 									{/* Add package cover image */}
 									{pkg.cover && (
-										<div className="package-img mb-3 h-60 flex items-center justify-center">
+										<div className="package-img mb-3 h-60 flex items-center justify-center relative">
+											{/* Discount badge */}
+											{(currency === "usd" && pkg.precetage_discount) ||
+											(currency === "sar" && pkg.precetage_discount_sar) ? (
+												<span className="absolute top-2 left-2 bg-green-700 text-white px-3 py-1 rounded-md font-bold text-sm z-10 shadow-md">
+													{currency === "usd"
+														? `${pkg.precetage_discount} % Off`
+														: `${pkg.precetage_discount_sar} % Off`}
+												</span>
+											) : null}
 											<Image
 												src={pkg.cover}
 												alt={pkg.title}
@@ -159,31 +187,89 @@ export default function SingleService({ data }) {
 											className="new-price"
 											style={{ fontWeight: "bold", color: "#2e8b57" }}
 										>
-											{currency === "usd"
-												? `$${pkg.discount_price}`
-												: pkg.discount_price_sar
-												? `${pkg.discount_price_sar} ﷼`
-												: `$${pkg.discount_price}`}
+											{currency === "usd" ? (
+												`$${pkg.discount_price}`
+											) : pkg.discount_price_sar ? (
+												<span
+													style={{
+														verticalAlign: "middle",
+														display: "inline-flex",
+														alignItems: "center",
+														gap: "0.2em",
+													}}
+												>
+													<svg
+														viewBox="0 0 1124.14 1256.39"
+														width="1em"
+														height="1em"
+														style={{
+															marginRight: "0.1em",
+														}}
+													>
+														<path
+															d="M699.62,1113.02h0c-20.06,44.48-33.32,92.75-38.4,143.37l424.51-90.24c20.06-44.47,33.31-92.75,38.4-143.37l-424.51,90.24Z"
+															fill="rgb(46, 139, 87)"
+														/>
+														<path
+															d="M1085.73,895.8c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.33v-135.2l292.27-62.11c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.27V66.13c-50.67,28.45-95.67,66.32-132.25,110.99v403.35l-132.25,28.11V0c-50.67,28.44-95.67,66.32-132.25,110.99v525.69l-295.91,62.88c-20.06,44.47-33.33,92.75-38.42,143.37l334.33-71.05v170.26l-358.3,76.14c-20.06,44.47-33.32,92.75-38.4,143.37l375.04-79.7c30.53-6.35,56.77-24.4,73.83-49.24l68.78-101.97v-.02c7.14-10.55,11.3-23.27,11.3-36.97v-149.98l132.25-28.11v270.4l424.53-90.28Z"
+															fill="rgb(46, 139, 87)"
+														/>
+													</svg>
+													{pkg.discount_price_sar}
+												</span>
+											) : (
+												`$${pkg.discount_price}`
+											)}
 										</p>
 										<p
 											className="old-price"
 											style={{ textDecoration: "line-through", color: "#999" }}
 										>
-											{currency === "usd"
-												? `$${pkg.original_price}`
-												: pkg.original_price_sar
-												? `${pkg.original_price_sar} ﷼`
-												: `$${pkg.original_price}`}
+											{currency === "usd" ? (
+												`$${pkg.original_price}`
+											) : pkg.original_price_sar ? (
+												<span
+													style={{
+														verticalAlign: "middle",
+														display: "inline-flex",
+														alignItems: "center",
+														gap: "0.2em",
+														textDecoration: "line-through",
+													}}
+												>
+													<svg
+														viewBox="0 0 1124.14 1256.39"
+														width="1em"
+														height="1em"
+														style={{
+															marginRight: "0.1em",
+														}}
+														fill="gray"
+													>
+														<path d="M699.62,1113.02h0c-20.06,44.48-33.32,92.75-38.4,143.37l424.51-90.24c20.06-44.47,33.31-92.75,38.4-143.37l-424.51,90.24Z" />
+														<path d="M1085.73,895.8c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.33v-135.2l292.27-62.11c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.27V66.13c-50.67,28.45-95.67,66.32-132.25,110.99v403.35l-132.25,28.11V0c-50.67,28.44-95.67,66.32-132.25,110.99v525.69l-295.91,62.88c-20.06,44.47-33.33,92.75-38.42,143.37l334.33-71.05v170.26l-358.3,76.14c-20.06,44.47-33.32,92.75-38.4,143.37l375.04-79.7c30.53-6.35,56.77-24.4,73.83-49.24l68.78-101.97v-.02c7.14-10.55,11.3-23.27,11.3-36.97v-149.98l132.25-28.11v270.4l424.53-90.28Z" />
+													</svg>
+													{pkg.original_price_sar}
+												</span>
+											) : (
+												`$${pkg.original_price}`
+											)}
 										</p>
 									</div>
-									<span className="offer">
+									{/* <span className="offer">
 										{currency === "usd"
 											? `${pkg.precetage_discount} % Off`
 											: pkg.precetage_discount_sar
 											? `${pkg.precetage_discount_sar} % Off`
 											: `${pkg.precetage_discount} % Off`}
-									</span>
+									</span> */}
 									<p className="details">{pkg.description}</p>
+									<button
+										type="button"
+										className="mt-4 w-full bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-4 rounded transition"
+									>
+										{lang === "en" ? "Contact Us" : "አግኙን"}
+									</button>
 								</Link>
 							</SwiperSlide>
 						))}
@@ -192,7 +278,7 @@ export default function SingleService({ data }) {
 
 				<div className="gallery mt-8 md:mt-10">
 					<h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6">
-						Gallery
+						{lang === "en" ? "Gallery" : "ጋለሪ"}
 					</h3>
 					<div className="columns-1 xs:columns-2 sm:columns-3 md:columns-4 lg:columns-5 gap-3 md:gap-4">
 						{data.images.map((img, idx) => (
@@ -202,9 +288,9 @@ export default function SingleService({ data }) {
 										<Image
 											src={img}
 											alt="Orient"
-											width={200}
-											height={200}
-											className="w-full rounded-lg object-contain"
+											width={240}
+											height={180}
+											className="w-[240px] h-[180px] object-cover rounded-lg mx-auto"
 										/>
 									</figure>
 								</a>

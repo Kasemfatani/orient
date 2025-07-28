@@ -65,7 +65,7 @@ export default function Advant() {
 								<div className="title-price">
 									<div className="title">
 										<h4>{data?.title}</h4>
-										<div className="stars-reviews-cont">
+										{/* <div className="stars-reviews-cont">
 											<div className="stars">
 												{Array.from({ length: 5 }).map((_, index) => (
 													<i
@@ -77,7 +77,7 @@ export default function Advant() {
 												))}
 											</div>
 											<span>(2.3k review)</span>
-										</div>
+										</div> */}
 									</div>
 								</div>
 								<p className="discripton "> {data?.description} </p>

@@ -3595,7 +3595,6 @@ body {
   text-align: center;
   transition: transform 0.3s ease;
   height: 100%;
-  display: block;
 }
 
 .package-card:hover {

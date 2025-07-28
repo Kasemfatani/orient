@@ -46,7 +46,7 @@ export default function ServiceWrapper() {
                 loading ? <Loading /> :
                     <>
                         <ServiceHero data={data} />
-                        <SingleService data={data} />
+                        <SingleService data={data} lang={lang} />
                         <Contact />
                     </>
             }
