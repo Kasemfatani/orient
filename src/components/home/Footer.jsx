@@ -16,11 +16,9 @@ export default function Footer() {
 	const [whatsapp, setWhatsapp] = useState("");
 	useEffect(() => {
 		if (typeof window !== "undefined") {
-			if (
-				localStorage.getItem("lang") === "am" ||
-				localStorage.getItem("lang") === "en"
-			) {
-				setLang(localStorage.getItem("lang"));
+			const storedLang = localStorage.getItem("lang");
+			if (storedLang === "am" || storedLang === "en" || storedLang === "ar") {
+				setLang(storedLang);
 			} else {
 				localStorage.setItem("lang", "en");
 				setLang("en");
@@ -47,6 +45,7 @@ export default function Footer() {
 				setLoading(false);
 			});
 	}, [lang]); // Add lang to the dependency array
+	console.log("Current language set in footer:", lang);
 	return (
 		<footer id="footer">
 			{" "}
@@ -69,25 +68,51 @@ export default function Footer() {
 							<Image src={logo} alt="Orient" width={200} height={200} />
 						</div>
 						<div className="links">
-							<h3>{lang === "am" ? "ፈጣን ማገናኛዎች" : "Quick Links"}</h3>
+							<h3>
+								{lang === "en"
+									? "Quick Links"
+									: lang === "am"
+									? "ፈጣን ማገናኛዎች"
+									: "روابط سريعة"}
+							</h3>
 							<ul>
 								<li>
-									<Link href="/">{lang === "am" ? "መነሻ" : "Home"}</Link>
+									<Link href="/">
+										{lang === "en"
+											? "Home"
+											: lang === "am"
+											? "መነሻ"
+											: "الرئيسية"}
+									</Link>
 								</li>
 								<li>
 									<Link href="/#about">
-										{lang === "am" ? "ስለኛ" : "About Us"}
+										{lang === "en"
+											? "About Us"
+											: lang === "am"
+											? "ስለኛ"
+											: "من نحن"}
 									</Link>
 								</li>
 								<li>
 									<Link href="/#contact">
-										{lang === "am" ? "ያግኙን" : "Contact Us"}
+										{lang === "en"
+											? "Contact Us"
+											: lang === "am"
+											? "ያግኙን"
+											: "اتصل بنا"}
 									</Link>
 								</li>
 							</ul>
 						</div>
 						<div className="links">
-							<h3>{lang === "am" ? "ያግኙን" : "Contact Us"}</h3>
+							<h3>
+								{lang === "en"
+									? "Contact Us"
+									: lang === "am"
+									? "ያግኙን"
+									: "اتصل بنا"}
+							</h3>
 							<ul>
 								<li>
 									<Link href={`tel:${data?.mobile}`}>{data?.mobile}</Link>
@@ -103,7 +128,13 @@ export default function Footer() {
 							</ul>
 						</div>
 						<div className="links">
-							<h3>{lang === "am" ? "ይከተሉን" : "Follow Us"}</h3>
+							<h3>
+								{lang === "en"
+									? "Follow Us"
+									: lang === "am"
+									? "ይከተሉን"
+									: "تابعنا"}
+							</h3>
 							<div className="social">
 								{data && data.social_media && Array.isArray(data.social_media)
 									? data.social_media.map((social, index) =>
@@ -129,7 +160,9 @@ export default function Footer() {
 						<i className="fa-regular fa-copyright"></i>{" "}
 						{lang === "en"
 							? "2025, All rights reserved to Orient Tourism Company"
-							: "2025፣ ሁሉም መብቶች ለኦሬንት ቱሪዝም ኩባንያ የተጠበቁ ናቸው።"}
+							: lang === "am"
+							? "2025፣ ሁሉም መብቶች ለኦሬንት ቱሪዝም ኩባንያ የተጠበቁ ናቸው።"
+							: "2025، جميع الحقوق محفوظة لشركة أورينت للسياحة"}
 					</div>
 				</div>
 			)}

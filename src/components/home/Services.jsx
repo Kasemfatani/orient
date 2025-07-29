@@ -16,11 +16,9 @@ export default function About() {
 	const [data, setData] = useState(null);
 	useEffect(() => {
 		if (typeof window !== "undefined") {
-			if (
-				localStorage.getItem("lang") === "am" ||
-				localStorage.getItem("lang") === "en"
-			) {
-				setLang(localStorage.getItem("lang"));
+			const storedLang = localStorage.getItem("lang");
+			if (storedLang === "am" || storedLang === "en" || storedLang === "ar") {
+				setLang(storedLang);
 			} else {
 				localStorage.setItem("lang", "en");
 				setLang("en");
@@ -50,11 +48,19 @@ export default function About() {
 				<Loading />
 			) : (
 				<div className="container m-auto" id="services">
-					<h2>{lang == "en" ? "Our Services" : "አገልግሎቶች"}</h2>
+					<h2>
+						{lang === "en"
+							? "Our Services"
+							: lang === "am"
+							? "አገልግሎቶች"
+							: "خدماتنا"}
+					</h2>
 					<h3>
-						{lang == "en"
+						{lang === "en"
 							? "We offer a wide range of services to meet your needs"
-							: "ፍላጎቶችዎን ለማሟላት ሰፋ ያሉ አገልግሎቶችን እናቀርባለን።"}
+							: lang === "am"
+							? "ፍላጎቶችዎን ለማሟላት ሰፋ ያሉ አገልግሎቶችን እናቀርባለን።"
+							: "نحن نقدم مجموعة واسعة من الخدمات لتلبية احتياجاتك"}
 					</h3>
 					<div className="services-conr">
 						<Swiper
@@ -107,7 +113,11 @@ export default function About() {
 												<p>{item.description}</p>
 												<div className="btn">
 													<span>
-														{lang === "am" ? "ተጨማሪ ያንብቡ" : "Read More"}{" "}
+														{lang === "am"
+															? "ተጨማሪ ያንብቡ"
+															: lang === "ar"
+															? "اقرأ المزيد"
+															: "Read More"}{" "}
 													</span>{" "}
 													<i className="fa-solid fa-chevron-right"></i>
 												</div>

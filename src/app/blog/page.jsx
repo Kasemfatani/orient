@@ -22,11 +22,9 @@ export default function Advant() {
 	}, []);
 	useEffect(() => {
 		if (typeof window !== "undefined") {
-			if (
-				localStorage.getItem("lang") === "am" ||
-				localStorage.getItem("lang") === "en"
-			) {
-				setLang(localStorage.getItem("lang"));
+			const storedLang = localStorage.getItem("lang");
+			if (storedLang === "am" || storedLang === "en" || storedLang === "ar") {
+				setLang(storedLang);
 			} else {
 				localStorage.setItem("lang", "en");
 				setLang("en");

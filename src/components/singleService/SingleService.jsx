@@ -268,7 +268,11 @@ export default function SingleService({ data, lang }) {
 										type="button"
 										className="mt-4 w-full bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-4 rounded transition"
 									>
-										{lang === "en" ? "Contact Us" : "አግኙን"}
+										{lang === "en"
+											? "Contact Us"
+											: lang === "am"
+											? "አግኙን"
+											: "تواصل معنا"}
 									</button>
 								</Link>
 							</SwiperSlide>
@@ -278,7 +282,7 @@ export default function SingleService({ data, lang }) {
 
 				<div className="gallery mt-8 md:mt-10">
 					<h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6">
-						{lang === "en" ? "Gallery" : "ጋለሪ"}
+						{lang === "en" ? "Gallery" : lang === "am" ? "ጋለሪ" : "معرض الصور"}
 					</h3>
 					<div className="columns-1 xs:columns-2 sm:columns-3 md:columns-4 lg:columns-5 gap-3 md:gap-4">
 						{data.images.map((img, idx) => (

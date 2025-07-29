@@ -8,15 +8,14 @@ import axios from "axios";
 import { API_BASE_URL } from "@/lib/apiConfig";
 export default function Book() {
 	const [lang, setLang] = useState("en");
-	const [loading, setLoading] = useState(true); // State for loading indicator
+	const [loading, setLoading] = useState(true);
 	const [data, setData] = useState(null);
+
 	useEffect(() => {
 		if (typeof window !== "undefined") {
-			if (
-				localStorage.getItem("lang") === "am" ||
-				localStorage.getItem("lang") === "en"
-			) {
-				setLang(localStorage.getItem("lang"));
+			const storedLang = localStorage.getItem("lang");
+			if (storedLang === "am" || storedLang === "en" || storedLang === "ar") {
+				setLang(storedLang);
 			} else {
 				localStorage.setItem("lang", "en");
 				setLang("en");
@@ -38,7 +37,7 @@ export default function Book() {
 				setLoading(false);
 			});
 	}, [lang]); // Run this effect whenever the `language` changes
-	//  console.log(data);
+	console.log("Fetched data vision:", data, lang);
 	return (
 		<section
 			className="vision-section"
