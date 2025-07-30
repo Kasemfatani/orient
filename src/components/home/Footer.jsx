@@ -45,9 +45,9 @@ export default function Footer() {
 				setLoading(false);
 			});
 	}, [lang]); // Add lang to the dependency array
-	console.log("Current language set in footer:", lang);
+	// console.log("Current language set in footer:", lang);
 	return (
-		<footer id="footer">
+		<footer id="footer" dir={lang === "ar" ? "rtl" : ""}>
 			{" "}
 			{/* Main footer container with padding and background color */}
 			{whatsapp ? (
@@ -114,7 +114,7 @@ export default function Footer() {
 									: "اتصل بنا"}
 							</h3>
 							<ul>
-								<li>
+								<li dir="ltr">
 									<Link href={`tel:${data?.mobile}`}>{data?.mobile}</Link>
 								</li>
 								<li>

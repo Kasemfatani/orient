@@ -61,13 +61,19 @@ export default function SingleService({ data, lang }) {
 	return (
 		<div className="SingleService">
 			<div className="container m-auto px-4 md:px-6 lg:px-0">
-				<div className="single-details">
+				<div className="single-details" dir={lang === "ar" ? "rtl" : ""}>
 					<div className="text flex flex-col md:flex-row gap-6">
 						<div className="det w-full">
 							<h2 className="text-2xl md:text-3xl lg:text-4xl">
 								{data?.title}
 							</h2>
-							<p className="text-sm md:text-base">{data?.description}</p>
+							<p
+								className={`text-sm md:text-base ${
+									lang === "ar" ? "text-right" : ""
+								}`}
+							>
+								{data?.description}
+							</p>
 						</div>
 						<div className="counters grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
 							{data.statistics.map((feature, index) => (
@@ -76,7 +82,9 @@ export default function SingleService({ data, lang }) {
 									<h5>
 										<NumberTicker value={Number(feature.counter)} /> +{" "}
 									</h5>
-									<p>{feature.description}</p>
+									<p className={`${lang === "ar" ? "text-right" : ""}`}>
+										{feature.description}
+									</p>
 								</div>
 							))}
 						</div>
@@ -84,8 +92,10 @@ export default function SingleService({ data, lang }) {
 				</div>
 
 				<div className="packages mt-8 md:mt-10">
-					<div className="flex items-center justify-between mb-6">
-						<h3 className="text-xl md:text-2xl font-bold">Packages</h3>
+					<div className="flex items-center justify-between mb-6" dir={lang === "ar" ? "rtl" : ""}>
+						<h3 className="text-xl md:text-2xl font-bold">
+							{lang === "en" ? "Packages" : lang === "am" ? "ጥቅሎች" : "الباقات"}
+						</h3>
 						<div className="flex gap-2">
 							<button
 								className={`px-3 py-1 rounded ${
@@ -95,7 +105,11 @@ export default function SingleService({ data, lang }) {
 								}`}
 								onClick={() => setCurrency("usd")}
 							>
-								Dollar ($)
+								{lang === "en"
+									? "Dollar ($)"
+									: lang === "am"
+									? "ዶላር ($)"
+									: "دولار ($)"}
 							</button>
 							<button
 								className={`px-3 py-1 rounded ${
@@ -105,7 +119,12 @@ export default function SingleService({ data, lang }) {
 								}`}
 								onClick={() => setCurrency("sar")}
 							>
-								Saudi Riyal (
+								{lang === "en"
+									? "Saudi Riyal"
+									: lang === "am"
+									? "ሳውዲ ሪያል"
+									: "ريال سعودي"}
+								(
 								<span
 									style={{
 										verticalAlign: "middle",
@@ -155,7 +174,7 @@ export default function SingleService({ data, lang }) {
 						}}
 					>
 						{data.packages.map((pkg, index) => (
-							<SwiperSlide key={index}>
+							<SwiperSlide key={index} className="ml-0">
 								<Link
 									href="contact"
 									className="package-card !h-[34rem] flex flex-col justify-between"
@@ -184,7 +203,7 @@ export default function SingleService({ data, lang }) {
 									<h4>{pkg.title}</h4>
 									<div className="price-section">
 										<p
-											className="new-price"
+											className={`new-price ${lang === "ar" ? "text-right" : ""}`}
 											style={{ fontWeight: "bold", color: "#2e8b57" }}
 										>
 											{currency === "usd" ? (
@@ -222,7 +241,7 @@ export default function SingleService({ data, lang }) {
 											)}
 										</p>
 										<p
-											className="old-price"
+											className={`old-price ${lang === "ar" ? "text-right" : ""}`}
 											style={{ textDecoration: "line-through", color: "#999" }}
 										>
 											{currency === "usd" ? (
@@ -263,7 +282,7 @@ export default function SingleService({ data, lang }) {
 											? `${pkg.precetage_discount_sar} % Off`
 											: `${pkg.precetage_discount} % Off`}
 									</span> */}
-									<p className="details">{pkg.description}</p>
+									<p className={`details ${lang === "ar" ? "text-right" : ""}`}>{pkg.description}</p>
 									<button
 										type="button"
 										className="mt-4 w-full bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-4 rounded transition"
@@ -280,7 +299,7 @@ export default function SingleService({ data, lang }) {
 					</Swiper>
 				</div>
 
-				<div className="gallery mt-8 md:mt-10">
+				<div className="gallery mt-8 md:mt-10" dir={lang === "ar" ? "rtl" : ""}>
 					<h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6">
 						{lang === "en" ? "Gallery" : lang === "am" ? "ጋለሪ" : "معرض الصور"}
 					</h3>

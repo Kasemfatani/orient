@@ -37,7 +37,7 @@ export default function Book() {
 				setLoading(false);
 			});
 	}, [lang]); // Run this effect whenever the `language` changes
-	console.log("Fetched data vision:", data, lang);
+	// console.log("Fetched data vision:", data, lang);
 	return (
 		<section
 			className="vision-section"
@@ -46,6 +46,7 @@ export default function Book() {
 				backgroundRepeat: "no-repeat",
 				backgroundSize: "cover",
 			}}
+			dir={lang === "ar" ? "rtl" : ""}
 		>
 			{loading ? (
 				<Loading />

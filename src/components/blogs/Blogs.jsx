@@ -18,7 +18,7 @@ export default function Advant() {
 		}
 	}, []);
 	return (
-		<div className="blogs-main-page">
+		<div className="blogs-main-page" dir={lang === "ar" ? "rtl" : ""}>
 			<ServiceTop
 				img={img1}
 				title={

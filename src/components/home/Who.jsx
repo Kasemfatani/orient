@@ -31,6 +31,7 @@ export default function Who() {
 
 	// Fetch data from API
 	useEffect(() => {
+		// console.log("Fetched data in useEffect about. the lang is :", lang);
 		setLoading(true);
 		axios
 			.get(`${API_BASE_URL}/landing/home/about`, { headers: { lang } })
@@ -48,7 +49,7 @@ export default function Who() {
 			.finally(() => setLoading(false));
 	}, [lang]);
 
-	console.log("Fetched data about:", data);
+	// console.log("Fetched data about:", data);
 
 	// Loading & Error States
 	if (loading) return <Loading />;
@@ -66,7 +67,7 @@ export default function Who() {
 		);
 
 	return (
-		<section className="hero-main why" id="about">
+		<section className="hero-main why" id="about" dir={lang === "ar" ? "rtl" : ""}>
 			<div className="container m-auto">
 				{/* Render "About" section only if `data.about` exists */}
 				{data.about && (
@@ -101,7 +102,7 @@ export default function Who() {
 								<h3 className="sec-title">{data.about.title}</h3>
 							)}
 							{data.about.description && (
-								<p className="who-p text-left">{data.about.description}</p>
+								<p className="who-p ">{data.about.description}</p>
 							)}
 							{data.about.profile_file && (
 								<a

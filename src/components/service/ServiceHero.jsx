@@ -2,7 +2,7 @@ import React from 'react'; // Importing React to use JSX syntax and create compo
 
 
 export default function ServiceHero({data}) { // Defining the main functional component named 'Footer'.
-console.log(data);
+// console.log(data);
 
     return (
         <section className="ServiceHero" style={{ backgroundImage: `url(${data.cover})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundAttachment: 'fixed' }}>

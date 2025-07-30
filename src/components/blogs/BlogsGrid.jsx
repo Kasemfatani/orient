@@ -19,6 +19,7 @@ export default function BlogsGrid() {
 				setLang("en");
 			}
 		}
+		// console.log("Fetched data in useEffect blosg grid. the lang is :", lang);
 		setLoading(true);
 		const headers = {
 			lang: lang, // Change language dynamically based on state
@@ -35,7 +36,7 @@ export default function BlogsGrid() {
 				setLoading(false);
 			});
 	}, [lang]); // Run this effect whenever the `language` changes
-
+// console.log("after useEffect blosg grid. the data is :", data , lang);
 	return (
 		<div className="news brief">
 			{loading ? (
@@ -62,7 +63,7 @@ export default function BlogsGrid() {
 									<div className="news-data">
 										<div className="text">
 											<h3>{item.title}</h3>
-											<p>{item.description}</p>
+											<p className={`${lang === "ar" ? "text-right" : ""}`}>{item.description}</p>
 										</div>
 										<a href={`/blog?id=${item.id}`}>
 											<div className="arrow">

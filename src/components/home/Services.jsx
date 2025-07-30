@@ -39,7 +39,7 @@ export default function About() {
 				console.error("Error fetching data:", error);
 				setLoading(false);
 			});
-		console.log(data);
+		// console.log(data);
 	}, [lang]); // Run this effect whenever the `language` changes
 
 	return (
@@ -108,7 +108,7 @@ export default function About() {
 													alt="Orient"
 												></Image>
 											</div>
-											<div className="text">
+											<div className="text" dir={lang === "ar" ? "rtl" : ""}>
 												<h2>{item.title}</h2>
 												<p>{item.description}</p>
 												<div className="btn">
@@ -119,7 +119,7 @@ export default function About() {
 															? "اقرأ المزيد"
 															: "Read More"}{" "}
 													</span>{" "}
-													<i className="fa-solid fa-chevron-right"></i>
+													<i className={`fa-solid ${lang === "ar" ? "fa-chevron-left" : "fa-chevron-right"}`}></i>
 												</div>
 											</div>
 										</Link>

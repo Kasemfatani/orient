@@ -19,7 +19,7 @@ export default function Contact() {
 		}
 	}, []);
 
-	console.log("Current language set to:", lang);
+	// console.log("Current language set to:", lang);
 
 	return (
 		<div

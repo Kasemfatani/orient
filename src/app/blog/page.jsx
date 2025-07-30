@@ -47,15 +47,15 @@ export default function Advant() {
 			});
 	}, [lang]); // Run this effect whenever the `language` changes
 
-	console.log(data);
+	// console.log(data);
 	return (
-		<div className="blogs-main-page">
+		<div className="blogs-main-page" dir={lang === "ar" ? "rtl" : ""}>
 			{loading ? (
 				<Loading />
 			) : (
 				<>
 					{data?.cover && (
-						<ServiceTop img={data.cover} title="Flight - Science World" />
+						<ServiceTop img={data.cover} title={data?.title} lang={lang} />
 					)}
 					<div className="container changed-container m-auto">
 						<div className="plan-main plan-main-details">
@@ -78,8 +78,19 @@ export default function Advant() {
 										</div> */}
 									</div>
 								</div>
-								<p className="discripton "> {data?.description} </p>
-								<h3>From our gallery</h3>
+								<p
+									className={`discripton ${lang === "ar" ? "text-right" : ""}`}
+								>
+									{" "}
+									{data?.description}{" "}
+								</p>
+								<h3>
+									{lang === "en"
+										? "From our gallery"
+										: lang === "am"
+										? "ከጋለሪያችን"
+										: "من معرض الصور"}
+								</h3>
 								<div className="imgs-cont">
 									{Array.isArray(data?.images) &&
 										data.images.map((item, index) => (

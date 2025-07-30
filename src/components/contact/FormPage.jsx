@@ -116,7 +116,7 @@ export default function FormPage({ lang }) {
 			className={`w-full form form-contact-alaa`}
 		>
 			<Form {...form}>
-				<form onSubmit={form.handleSubmit(Submit)}>
+				<form onSubmit={form.handleSubmit(Submit)} dir={lang === "ar" ? "rtl" : ""}>
 					<motion.div
 						initial={{ opacity: 0, x: 100 }} // Initial animation state (faded and shifted left)
 						whileInView={{ opacity: 1, x: 0 }} // Animation state when in view (fully visible and reset position)
@@ -182,7 +182,7 @@ export default function FormPage({ lang }) {
 											: "البريد الإلكتروني"}
 									</FormLabel>{" "}
 									{/* Label for phone number */}
-									<FormControl className="">
+									<FormControl className="" dir="ltr">
 										<Input
 											type="email"
 											placeholder="Email@email.com"
