@@ -91,7 +91,7 @@ export default function SingleService({ data, lang }) {
 					</div>
 				</div>
 
-				<div className="packages mt-8 md:mt-10">
+				<div className="packages mt-8 md:mt-10" dir={lang === "ar" ? "rtl" : ""}>
 					<div className="flex items-center justify-between mb-6" dir={lang === "ar" ? "rtl" : ""}>
 						<h3 className="text-xl md:text-2xl font-bold">
 							{lang === "en" ? "Packages" : lang === "am" ? "ጥቅሎች" : "الباقات"}
@@ -174,7 +174,7 @@ export default function SingleService({ data, lang }) {
 						}}
 					>
 						{data.packages.map((pkg, index) => (
-							<SwiperSlide key={index} className="ml-0">
+							<SwiperSlide key={index} className="ml-0" dir="ltr" >
 								<Link
 									href="contact"
 									className="package-card !h-[34rem] flex flex-col justify-between"

@@ -152,13 +152,14 @@
   .vision-item {
     display: flex;
     align-items: center;
-    gap: 30px;
+    // gap: 30px;
     padding-bottom: 22px;
     border-bottom: 2px solid #ffd4b2;
+    justify-content: space-around;
 
     @include max-991 {
       flex-direction: column;
-      justify-content: center;
+      // justify-content: center;
       gap: 20px;
     }
   }

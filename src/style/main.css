@@ -2474,14 +2474,13 @@ body {
 .vision-item {
   display: flex;
   align-items: center;
-  gap: 30px;
   padding-bottom: 22px;
   border-bottom: 2px solid #ffd4b2;
+  justify-content: space-around;
 }
 @media only screen and (max-width: 991px) {
   .vision-item {
     flex-direction: column;
-    justify-content: center;
     gap: 20px;
   }
 }
