@@ -7,7 +7,7 @@ import { motion } from "framer-motion"; // Importing the motion component from F
 import axios from "axios";
 import { API_BASE_URL } from "@/lib/apiConfig";
 export default function Book() {
-	const [lang, setLang] = useState("en");
+	const [lang, setLang] = useState(null); // Start as null
 	const [loading, setLoading] = useState(true);
 	const [data, setData] = useState(null);
 
@@ -21,13 +21,16 @@ export default function Book() {
 				setLang("en");
 			}
 		}
+	}, []); // Only run once on mount
+
+	useEffect(() => {
+		if (!lang) return; // Don't fetch until lang is set
 		setLoading(true);
-		const headers = {
-			lang: lang, // Change language dynamically based on state
-		};
+		const headers = { lang };
+		console.log("Fetching data with lang:", lang);
 		// Fetch data from the API with Axios
 		axios
-			.get(`${API_BASE_URL}/landing/home/mission`, { headers: headers })
+			.get(`${API_BASE_URL}/landing/home/mission`, { headers })
 			.then((response) => {
 				setData(response.data.data); // Set the response data to state
 				setLoading(false); // Set loading to false
@@ -37,7 +40,7 @@ export default function Book() {
 				setLoading(false);
 			});
 	}, [lang]); // Run this effect whenever the `language` changes
-	// console.log("Fetched data vision:", data, lang);
+	console.log("Fetched data vision:", data, "the language is", lang);
 	return (
 		<section
 			className="vision-section"

@@ -10,7 +10,7 @@ import { API_BASE_URL } from "@/lib/apiConfig";
 import Loading from "@/app/loading";
 
 export default function Who() {
-	const [lang, setLang] = useState("en");
+	const [lang, setLang] = useState(null);
 	const [loading, setLoading] = useState(true);
 	const [data, setData] = useState(null);
 	const [error, setError] = useState(null);
@@ -32,6 +32,7 @@ export default function Who() {
 	// Fetch data from API
 	useEffect(() => {
 		// console.log("Fetched data in useEffect about. the lang is :", lang);
+		if (!lang) return; // Don't fetch until lang is set
 		setLoading(true);
 		axios
 			.get(`${API_BASE_URL}/landing/home/about`, { headers: { lang } })

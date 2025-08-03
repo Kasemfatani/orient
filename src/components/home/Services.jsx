@@ -11,7 +11,7 @@ import Loading from "@/app/loading";
 import axios from "axios";
 import { API_BASE_URL } from "@/lib/apiConfig";
 export default function About() {
-	const [lang, setLang] = useState("en");
+	const [lang, setLang] = useState(null);
 	const [loading, setLoading] = useState(true); // State for loading indicator
 	const [data, setData] = useState(null);
 	useEffect(() => {
@@ -24,6 +24,7 @@ export default function About() {
 				setLang("en");
 			}
 		}
+		if (!lang) return; // Don't fetch until lang is set
 		setLoading(true);
 		const headers = {
 			lang: lang, // Change language dynamically based on state

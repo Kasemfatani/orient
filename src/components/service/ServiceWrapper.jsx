@@ -13,7 +13,7 @@ export default function ServiceWrapper() {
 	const pathId = searchparams.get("id");
 	const [loading, setLoading] = useState(true); // State for loading indicator
 	const [data, setData] = useState(null);
-	const [lang, setLang] = useState("en");
+	const [lang, setLang] = useState(null); // Start as null
 	useEffect(() => {
 		if (typeof window !== "undefined") {
 			const storedLang = localStorage.getItem("lang");
@@ -25,6 +25,7 @@ export default function ServiceWrapper() {
 				setLang("en");
 			}
 		}
+		if (!lang) return; // Don't fetch until lang is set
 		setLoading(true);
 		const headers = {
 			lang: lang, // Change language dynamically based on state
