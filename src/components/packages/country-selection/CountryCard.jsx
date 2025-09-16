@@ -1,18 +1,20 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { Autoplay, EffectFade } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-fade";
 
-export default function CountryHero({ data }) {
-	const { images, text } = data;
-
+export default function CountryCard({ images, text, href }) {
 	return (
-		<div className="relative w-full h-[70vh] flex items-center justify-center overflow-hidden">
-			{/* Swiper images (z-0 by default) */}
+		<Link
+			href={href}
+			className="block rounded-2xl overflow-hidden shadow-lg relative group transition-transform duration-200 hover:scale-105"
+			style={{ minHeight: 340, height: "40vh" }}
+		>
 			<Swiper
 				slidesPerView={1}
 				loop={true}
@@ -25,7 +27,7 @@ export default function CountryHero({ data }) {
 					<SwiperSlide key={idx}>
 						<Image
 							src={src}
-							alt=""
+							alt={text}
 							fill
 							className="object-cover w-full h-full"
 							priority={idx === 0}
@@ -37,10 +39,10 @@ export default function CountryHero({ data }) {
 			<div className="absolute inset-0 bg-black/50 z-10 pointer-events-none" />
 			{/* Centered text */}
 			<div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
-				<h1 className="text-white text-4xl md:text-5xl font-bold text-center drop-shadow-lg">
+				<h2 className="text-white text-3xl md:text-4xl font-bold text-center drop-shadow-lg">
 					{text}
-				</h1>
+				</h2>
 			</div>
-		</div>
+		</Link>
 	);
 }

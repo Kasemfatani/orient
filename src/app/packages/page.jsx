@@ -3,11 +3,25 @@
 import Loading from "@/app/loading";
 import React, { useEffect, useState } from "react";
 import CountryHero from "@/components/packages/country-selection/CountryHero";
+import CountryCard from "@/components/packages/country-selection/CountryCard";
 
 const heroData = {
 	images: ["/gallery/1.png", "/gallery/2.png", "/gallery/6.png"],
 	text: "Choose the country",
 };
+
+const countryCards = [
+	{
+		images: ["/gallery/4.png", "/gallery/5.png"],
+		text: "Ethiopia",
+		href: "/packages/ethiopia",
+	},
+	{
+		images: ["/gallery/6.png", "/gallery/7.png"],
+		text: "Nigeria",
+		href: "/packages/nigeria",
+	},
+];
 
 export default function Packages() {
 	const [loading, setLoading] = useState(true);
@@ -26,5 +40,20 @@ export default function Packages() {
 		setLoading(false);
 	}, []);
 
-	return <>{loading ? <Loading /> : <CountryHero data={heroData} />}</>;
+	return (
+		<>
+			{loading ? (
+				<Loading />
+			) : (
+				<>
+					<CountryHero data={heroData} />
+					<div className="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+						{countryCards.map((card, idx) => (
+							<CountryCard key={idx} {...card} />
+						))}
+					</div>
+				</>
+			)}
+		</>
+	);
 }
