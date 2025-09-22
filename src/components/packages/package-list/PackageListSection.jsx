@@ -21,7 +21,7 @@ const packages = [
     nights: { Makkah: 4, "Al Madinah": 7 },
     type_id: 1,
     price: 2195,
-    href: "/package-details/1",
+    href: "/package-detail?id=1",
   },
   {
     id: 2,
@@ -32,7 +32,7 @@ const packages = [
     nights: { Makkah: 5, "Al Madinah": 7 },
     type_id: 2,
     price: 3499,
-    href: "/package-details/2",
+    href: "/package-detail?id=2",
   },
   {
     id: 3,
@@ -43,7 +43,7 @@ const packages = [
     nights: { Makkah: 3, "Al Madinah": 4 },
     type_id: 1,
     price: 1599,
-    href: "/package-details/3",
+    href: "/package-detail?id=3",
   },
   {
     id: 4,
@@ -54,7 +54,7 @@ const packages = [
     nights: { Makkah: 4, "Al Madinah": 4 },
     type_id: 2,
     price: 2899,
-    href: "/package-details/4",
+    href: "/package-detail?id=4",
   },
 ];
 

@@ -14,12 +14,12 @@ const countryCards = [
 	{
 		images: ["/gallery/4.png", "/gallery/5.png"],
 		text: "Ethiopia",
-		href: "/packages/ethiopia",
+		href: "/package-list?id=1",
 	},
 	{
 		images: ["/gallery/6.png", "/gallery/7.png"],
 		text: "Nigeria",
-		href: "/packages/nigeria",
+		href: "/package-list?id=2",
 	},
 ];
 
