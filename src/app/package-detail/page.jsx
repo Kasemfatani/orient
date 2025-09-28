@@ -98,6 +98,7 @@ export default function PackageDetail() {
             });
     }, [lang, packageId]);
     console.log("summaryData", summaryData);
+    console.log("overviewData", overviewData);
 
     if (loading) {
         return <Loading />;
