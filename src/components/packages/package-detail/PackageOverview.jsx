@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import parse from 'html-react-parser';
+import parse from "html-react-parser";
 
 export default function PackageOverview({ overview, lang }) {
 	return (
@@ -11,7 +11,8 @@ export default function PackageOverview({ overview, lang }) {
 				</CardTitle>
 			</CardHeader>
 			<CardContent className="p-0 space-y-4">
-				<div>{parse(overview.content)}</div>
+				<div className="package-overview-content">{parse(overview.content)}</div>
+				
 			</CardContent>
 		</Card>
 	);

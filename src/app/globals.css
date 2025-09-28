@@ -233,3 +233,38 @@ a {
 .ltr{
   direction:ltr;
 }
+
+
+.package-overview-content ul,
+.package-overview-content ol {
+  list-style: revert;
+  margin-left: 1.5em;
+  margin-right: 1.5em;
+ 
+  margin-bottom: 1.5em;
+  padding-left: 1.2em;
+  padding-right: 1.2em;
+}
+.package-overview-content ul {
+  list-style-type: disc;
+}
+.package-overview-content ol {
+  list-style-type: decimal;
+}
+
+.package-overview-content li > p {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Fix the white-space issue that causes bullet misalignment */
+.package-overview-content li {
+  white-space: normal !important;
+}
+
+/* Also target the ::marker pseudo-element to ensure proper alignment */
+.package-overview-content li::marker {
+  white-space: normal !important;
+}
