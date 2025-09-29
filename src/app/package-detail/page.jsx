@@ -146,6 +146,7 @@ export default function PackageDetail() {
                 overview={overviewData}
                 offers={offersData}
                 lang={lang}
+                packageId={packageId}
             />
         </div>
     );

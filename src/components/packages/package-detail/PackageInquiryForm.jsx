@@ -5,7 +5,7 @@ import axios from "axios";
 import { getTranslation } from "@/utils/translations";
 import { API_BASE_URL } from "@/lib/apiConfig";
 
-export default function PackageInquiryForm({ fields, lang = "en" }) {
+export default function PackageInquiryForm({ fields, lang = "en", packageId }) {
 	const [formData, setFormData] = useState({});
 	const [isSubmitting, setIsSubmitting] = useState(false);
 	const [submitMessage, setSubmitMessage] = useState("");
@@ -44,6 +44,7 @@ export default function PackageInquiryForm({ fields, lang = "en" }) {
 			const submitData = {
 				...formData,
 				message: `Ticket booked: ${isTicketBooked || "Not specified"}`,
+				package_id: packageId,
 			};
 
 			const storedLang = localStorage.getItem("lang") || "en";
