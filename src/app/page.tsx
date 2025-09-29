@@ -5,6 +5,7 @@ import Vision from '../components/home/Vision';
 import Services from '../components/home/Services';
 import Contact from '../components/contact/Contact';
 // import Contact from '../../components/contact/Contact';
+import Packages from '../components/home/Packages';
 
 export default function Home() {
   
@@ -13,6 +14,7 @@ export default function Home() {
       <Hero/>
       <Who/>
       <Vision/>
+      <Packages />
       <Services/>
       <Contact />
     </main>

@@ -163,6 +163,9 @@ export default function Header() {
 					<Link href="/#services" onClick={openLinks}>
 						{lang === "en" ? "Services" : lang === "am" ? "አገልግሎቶች" : "الخدمات"}
 					</Link>
+					<Link href="/packages" onClick={openLinks}>
+						{lang === "en" ? "Packages" : lang === "am" ? "ጥቅሎች" : "الباقات"}
+					</Link>
 					<Link href="/#contact" onClick={openLinks}>
 						{lang === "en" ? "Contact US" : lang === "am" ? "ያግኙን" : "اتصل بنا"}
 					</Link>
