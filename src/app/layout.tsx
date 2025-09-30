@@ -7,6 +7,7 @@ import '../style/main.css';
 import { Toaster } from "@/components/ui/sonner";
 import { getSeoData } from '@/lib/getSeoData';
 import logo from '../assets/images/home/logo.png';
+import ScrollToTop from '@/components/home/ScrollToTop';
 
 // ✅ Fetch metadata dynamically from the API
 // export async function generateMetadata(): Promise<Metadata> {
@@ -65,6 +66,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" dir='ltr' id='root'>
       <body className="w-full" suppressHydrationWarning={true}>
         <Header />
+        <ScrollToTop />
         {children}
         <Footer />
         <Toaster />

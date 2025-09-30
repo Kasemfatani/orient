@@ -235,6 +235,9 @@ a {
   direction:ltr;
 }
 
+.package-overview-content * {
+  font-family: 'Cairo', sans-serif !important;  
+}
 
 .package-overview-content ul,
 .package-overview-content ol {

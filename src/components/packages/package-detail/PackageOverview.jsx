@@ -4,7 +4,7 @@ import parse from "html-react-parser";
 
 export default function PackageOverview({ overview, lang }) {
 	return (
-		<Card className="p-6 mt-6">
+		<Card className="p-6 mt-6 overflow-auto">
 			<CardHeader className="p-0 mb-4">
 				<CardTitle className="text-2xl font-bold text-gray-800">
 					{overview.title}
